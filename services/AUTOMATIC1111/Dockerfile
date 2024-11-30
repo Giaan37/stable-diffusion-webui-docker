@@ -33,6 +33,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   git reset --hard v1.9.4 && \
   pip install -r requirements_versions.txt
 
+RUN --mount=type=cache,target=/root/.cache/pip \
+   pip uninstall -y typing_extensions && \
+   pip install typing_extensions==4.11.0
 
 ENV ROOT=/stable-diffusion-webui
 
